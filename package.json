@@ -1,0 +1,15 @@
+{
+  "name": "riceyield-mern",
+  "version": "1.0.0",
+  "description": "RiceYield AI — Full MERN Stack Application",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "start": "cd server && npm start",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
