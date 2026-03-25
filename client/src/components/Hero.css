@@ -1,0 +1,121 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 32px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+.orb-a { width: 600px; height: 600px; background: radial-gradient(circle, rgba(22,163,74,0.2) 0%, transparent 65%); top: -150px; left: 50%; transform: translateX(-50%); animation: float 10s ease-in-out infinite; }
+.orb-b { width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 65%); bottom: 0; left: -100px; animation: float 14s ease-in-out infinite reverse; }
+.orb-c { width: 300px; height: 300px; background: radial-gradient(circle, rgba(74,222,128,0.12) 0%, transparent 65%); bottom: 100px; right: -50px; animation: float 12s ease-in-out infinite 2s; }
+@keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-30px)} }
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(74,222,128,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(74,222,128,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
+}
+.hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.hero-tag {
+  display: inline-block;
+  background: rgba(74,222,128,0.1);
+  border: 1px solid rgba(74,222,128,0.3);
+  color: var(--green-lime);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.6s ease forwards;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+  animation: fadeUp 0.6s ease 0.1s forwards;
+  opacity: 0;
+}
+.hero-accent {
+  background: linear-gradient(135deg, var(--green-bright), var(--green-lime), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-desc {
+  font-size: 1.15rem;
+  color: rgba(240,253,244,0.65);
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+  animation: fadeUp 0.6s ease 0.2s forwards;
+  opacity: 0;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  animation: fadeUp 0.6s ease 0.3s forwards;
+  opacity: 0;
+}
+.btn-lg { padding: 16px 36px; font-size: 1rem; }
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s ease 0.4s forwards;
+  opacity: 0;
+}
+.hero-stat { text-align: center; }
+.hero-stat-val {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--green-lime);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.gov-ribbon { background: rgba(30,64,175,0.15); border: 1px solid rgba(59,130,246,0.25); color: #93c5fd; font-size: 0.78rem; font-weight: 600; padding: 6px 20px; border-radius: 20px; display: inline-block; margin-bottom: 14px; letter-spacing: 0.03em; animation: fadeUp 0.5s ease forwards; opacity: 0; }
+.gov-logos { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 28px; animation: fadeUp 0.6s ease 0.5s forwards; opacity: 0; }
+.gov-logo-chip { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 5px 14px; border-radius: 8px; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); }
+
+/* v4 Hero additions */
+.hero-particles { position: absolute; inset: 0; pointer-events: none; }
+.particle { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--green-lime); opacity: 0; animation: particleFloat var(--dur, 8s) ease-in-out infinite var(--delay, 0s); }
+.p-0{left:10%;top:20%;--dur:9s;--delay:0s} .p-1{left:20%;top:70%;--dur:11s;--delay:1s} .p-2{left:35%;top:40%;--dur:7s;--delay:2s} .p-3{left:50%;top:80%;--dur:13s;--delay:0.5s} .p-4{left:65%;top:25%;--dur:8s;--delay:1.5s} .p-5{left:80%;top:60%;--dur:10s;--delay:3s} .p-6{left:90%;top:15%;--dur:6s;--delay:2.5s} .p-7{left:5%;top:50%;--dur:12s;--delay:1s} .p-8{left:75%;top:45%;--dur:9s;--delay:0.8s} .p-9{left:45%;top:10%;--dur:11s;--delay:2s} .p-10{left:25%;top:90%;--dur:8s;--delay:3.5s} .p-11{left:60%;top:70%;--dur:10s;--delay:1.8s}
+@keyframes particleFloat { 0%,100%{opacity:0;transform:translateY(0)} 20%,80%{opacity:0.6} 50%{transform:translateY(-40px)} }
+
+.ribbon-flag { margin-right: 6px; }
+.ribbon-live { margin-left: 12px; color: #4ade80; animation: pulse-dot 2s ease-in-out infinite; font-size: 0.72rem; }
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.hero-cta { position: relative; overflow: hidden; }
+.hero-cta::after { content:''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transform: translateX(-100%); animation: shimmer 3s ease-in-out infinite 2s; }
+@keyframes shimmer { to { transform: translateX(200%); } }
+.cta-icon { font-size: 1.1rem; }
+
+.hero-trust { display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 28px; animation: fadeUp 0.6s ease 0.5s forwards; opacity: 0; }
+.trust-label { font-size: 0.75rem; color: var(--text-muted); margin-right: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.hero-scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 48px; animation: fadeUp 0.6s ease 0.7s forwards; opacity: 0; }
+.hero-scroll-hint span { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--green-bright), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+@keyframes scrollPulse { 0%,100%{opacity:0.3;transform:scaleY(0.5)} 50%{opacity:1;transform:scaleY(1)} }
+
+.hero-content.visible .fade-up { animation: fadeUp 0.7s ease forwards; }
