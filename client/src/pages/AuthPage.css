@@ -1,0 +1,22 @@
+.auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; position: relative; overflow: hidden; }
+.auth-bg-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+.orb1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(22,163,74,0.18) 0%, transparent 70%); top: -100px; left: -100px; animation: orb-float 8s ease-in-out infinite; }
+.orb2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(30,64,175,0.12) 0%, transparent 70%); bottom: -80px; right: -80px; animation: orb-float 10s ease-in-out infinite reverse; }
+@keyframes orb-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-30px)} }
+.auth-card { width: 100%; max-width: 460px; background: rgba(15,46,26,0.6); border: 1px solid rgba(74,222,128,0.2); border-radius: 24px; padding: 48px 40px; backdrop-filter: blur(20px); box-shadow: 0 24px 64px rgba(0,0,0,0.4); position: relative; z-index: 1; }
+.auth-card-wide { max-width: 680px; }
+.auth-header { text-align: center; margin-bottom: 28px; }
+.auth-logo { font-size: 3rem; margin-bottom: 10px; display: block; }
+.gov-auth-tag { display: inline-block; background: rgba(30,64,175,0.15); border: 1px solid rgba(59,130,246,0.3); color: #93c5fd; font-size: 0.72rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; letter-spacing: 0.08em; margin-bottom: 10px; }
+.auth-header h1 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; margin-bottom: 6px; }
+.auth-header p { color: var(--text-muted); font-size: 0.9rem; }
+.demo-hints { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; padding: 12px 16px; margin-bottom: 24px; }
+.demo-row { font-size: 0.78rem; color: #fcd34d; padding: 2px 0; }
+.auth-form { display: flex; flex-direction: column; gap: 18px; }
+.reg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; }
+.w-full { width: 100%; justify-content: center; margin-top: 4px; }
+.auth-consent { font-size: 0.75rem; color: var(--text-muted); text-align: center; padding: 8px; background: rgba(74,222,128,0.05); border-radius: 8px; line-height: 1.5; }
+.auth-footer { text-align: center; margin-top: 20px; font-size: 0.88rem; color: var(--text-muted); }
+.auth-footer a { color: var(--green-lime); text-decoration: none; font-weight: 600; }
+@media (max-width: 600px) { .reg-grid { grid-template-columns: 1fr; } .auth-card { padding: 32px 24px; } }

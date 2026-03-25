@@ -1,0 +1,13 @@
+{
+  "name": "riceyield-ai",
+  "version": "4.0.0",
+  "description": "RiceYield AI - Government Grade MERN Platform v4",
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

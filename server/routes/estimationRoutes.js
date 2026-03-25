@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const { createEstimation, getEstimations, getEstimationStats, verifyEstimation, exportEstimations } = require('../controllers/estimationController');
+const { protect, optionalAuth } = require('../middleware/auth');
+router.post('/', optionalAuth, createEstimation);
+router.get('/', protect, getEstimations);
+router.get('/stats', protect, getEstimationStats);
+router.get('/export', protect, exportEstimations);
+router.patch('/:id/verify', protect, verifyEstimation);
+module.exports = router;

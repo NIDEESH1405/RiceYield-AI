@@ -1,0 +1,29 @@
+.reports-page { min-height: 100vh; padding: 40px 24px 60px; }
+.reports-container { max-width: 1280px; margin: 0 auto; }
+.reports-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+.reports-header h1 { font-family: var(--font-display); font-size: 2rem; font-weight: 800; margin-bottom: 6px; }
+.reports-header p { color: var(--text-muted); }
+.report-form { padding: 32px; margin-bottom: 28px; }
+.report-form h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 24px; }
+.form-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; margin-bottom: 20px; }
+.reports-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; margin-bottom: 28px; }
+.report-stat { padding: 24px; text-align: center; }
+.rs-icon { font-size: 2rem; margin-bottom: 10px; }
+.rs-val { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--green-lime); margin-bottom: 4px; }
+.rs-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.reports-table { padding: 28px; }
+.reports-table h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); padding: 10px 14px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+td { padding: 14px; font-size: 0.88rem; border-bottom: 1px solid rgba(74,222,128,0.06); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(74,222,128,0.03); }
+.report-title-cell { display: flex; align-items: center; gap: 10px; }
+.report-icon { font-size: 1.3rem; }
+.type-tag { background: rgba(74,222,128,0.1); color: var(--green-lime); padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; text-transform: capitalize; white-space: nowrap; }
+.empty-reports { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+.empty-reports span { font-size: 3rem; display: block; margin-bottom: 12px; }
+.dash-loading { display: flex; align-items: center; justify-content: center; gap: 16px; height: 40vh; font-size: 1.1rem; color: var(--green-lime); }
+.form-group { display: flex; flex-direction: column; }
+@media (max-width: 768px) { .reports-header { flex-direction: column; } }

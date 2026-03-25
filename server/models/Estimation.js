@@ -1,0 +1,55 @@
+const mongoose = require('mongoose');
+const EstimationSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', default: null },
+  farmerId: { type: String },
+  district: { type: String },
+  state: { type: String },
+  village: { type: String },
+  gpsLat: { type: Number },
+  gpsLng: { type: Number },
+  sessionId: { type: String, default: () => Math.random().toString(36).substr(2, 12) },
+  fieldArea: { type: Number, required: true },
+  riceVariety: { type: String, required: true },
+  season: { type: String, required: true },
+  ndvi: { type: Number, required: true },
+  lai: { type: Number, required: true },
+  irrigation: { type: String, required: true },
+  soilType: { type: String, required: true },
+  nitrogen: { type: Number, required: true },
+  phosphorus: { type: Number, default: 0 },
+  potassium: { type: Number, default: 0 },
+  plantingYear: { type: Number },
+  plantingDate: { type: Date },
+  expectedHarvestDate: { type: Date },
+  weatherCondition: { type: String, default: 'normal' },
+  pestPressure: { type: String, enum: ['none','low','medium','high'], default: 'none' },
+  yieldPerHectare: { type: Number, required: true },
+  totalProduction: { type: Number, required: true },
+  estimatedRevenue: { type: Number },
+  marketPrice: { type: Number, default: 2000 },
+  confidenceIntervalLow: { type: Number },
+  confidenceIntervalHigh: { type: Number },
+  radiationUseEfficiency: { type: Number },
+  harvestIndex: { type: Number },
+  nitrogenUseEfficiency: { type: Number },
+  waterProductivityScore: { type: Number },
+  carbonFootprint: { type: Number },
+  waterUsage: { type: Number },
+  risks: [{ label: String, level: String, mitigation: String }],
+  recommendations: [{ category: String, text: String, priority: String }],
+  insuranceEligible: { type: Boolean, default: false },
+  subsidyAmount: { type: Number, default: 0 },
+  modelUsed: { type: String, default: 'Hybrid LSTM + ORYZA2000 v3' },
+  status: { type: String, enum: ['draft','submitted','verified','approved'], default: 'submitted' },
+  verifiedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  verifiedAt: { type: Date },
+  reportGenerated: { type: Boolean, default: false },
+  createdAt: { type: Date, default: Date.now },
+}, { timestamps: true });
+
+EstimationSchema.index({ createdAt: -1 });
+EstimationSchema.index({ userId: 1 });
+EstimationSchema.index({ district: 1 });
+EstimationSchema.index({ state: 1 });
+EstimationSchema.index({ status: 1 });
+module.exports = mongoose.model('Estimation', EstimationSchema);
